@@ -22,7 +22,18 @@ public class Directorio {
         System.out.println("No se encontrò el telefono asociado a un cliente");
         return null;
     }
-
+public ArrayList<Cliente> buscarClientes(String ciudad){
+        
+        ArrayList<Cliente>buscar= new ArrayList();
+        
+       Iterator<String> it = registro.keySet().iterator();
+       while(it.hasNext()){
+           if(registro.get(it).getCiudad().equals(ciudad)){
+               buscar.add(registro.get(it));
+           }         
+       }
+        return buscar;
+    }
 
 
 
