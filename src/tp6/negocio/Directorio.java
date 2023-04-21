@@ -51,4 +51,13 @@ public class Directorio {
 //        }
         return num;
     }
+    
+    public void borrarCliente(String telefono){
+        Cliente aux = registro.remove(telefono);
+        if (aux!=null) {
+            System.out.println("Se ha eliminado correctamente.");
+        } else {
+            System.out.println("Cliente no encontrado.");
+        }
+    }
 }
