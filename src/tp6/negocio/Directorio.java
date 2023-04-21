@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 // buscarTeléfono() que en base a un apellido nos devuelve una lista con los nros de 
 //teléfono asociados a dicho apellido.
@@ -25,11 +26,14 @@ public class Directorio {
 public ArrayList<Cliente> buscarClientes(String ciudad){
         
         ArrayList<Cliente>buscar= new ArrayList();
-        
-       Iterator<String> it = registro.keySet().iterator();
+        Set<String> claves=registro.keySet();
+       Iterator<String> it = claves.iterator();
        while(it.hasNext()){
-           if(registro.get(it).getCiudad().equals(ciudad)){
-               buscar.add(registro.get(it));
+           String claveActual=it.next();
+           Cliente clienteActual=registro.get(claveActual);
+           
+           if(clienteActual.getCiudad().equals(ciudad)){
+               buscar.add(clienteActual);
            }         
        }
         return buscar;
