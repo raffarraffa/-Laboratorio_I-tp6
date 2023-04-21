@@ -1,7 +1,9 @@
 
 package tp6.negocio;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 
 public class Directorio {
@@ -17,5 +19,17 @@ public class Directorio {
         } else {
             System.out.println("Cliente no encontrado.");
         }
+    }
+     public ArrayList buscarClientes(String ciudad){
+        
+        ArrayList<Cliente>buscar= new ArrayList();
+        
+       Iterator<Cliente> it = registro.Iterator();
+       while(it.hasNext()){
+           if(it.next().getCiudad().equals(ciudad)){
+               buscar.add(it.next());
+           }         
+       }
+        return buscar;
     }
 }
