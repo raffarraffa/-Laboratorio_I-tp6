@@ -1,5 +1,5 @@
 
-package tp6.negocio;
+package tel;
 
 import java.util.ArrayList;
 import java.util.HashMap;

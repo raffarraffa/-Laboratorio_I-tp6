@@ -1,5 +1,5 @@
 
-package tp6.negocio;
+package tel;
 
 
 public class Cliente {

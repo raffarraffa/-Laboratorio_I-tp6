@@ -6,8 +6,8 @@
 package tp6;
 
 import javax.swing.JOptionPane;
-import tp6.negocio.Cliente;
-import tp6.negocio.Directorio;
+import tel.Cliente;
+import tel.Directorio;
 
 /**
  *
