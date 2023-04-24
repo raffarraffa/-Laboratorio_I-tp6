@@ -1,8 +1,7 @@
-
 package tel;
 
-
 public class Cliente {
+
     private int dni;
     private String nombre;
     private String apellido;
@@ -56,6 +55,10 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", ciudad=" + ciudad + ", direccion=" + direccion + '}';
+    }
+
 }

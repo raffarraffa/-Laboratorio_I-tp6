@@ -5,6 +5,7 @@
  */
 package tp6;
 
+import java.util.*;
 import javax.swing.JOptionPane;
 import tel.Cliente;
 import tel.Directorio;
@@ -19,29 +20,20 @@ public class Tp6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Directorio d=new Directorio();
+        // nuevo directorio
+        Directorio d = new Directorio();
+        ArrayList<Cliente> clientes = new ArrayList();
+        ArrayList<String> clientes_tel = new ArrayList();
+
         //Cliente martin lucero de la punta mod 11 mz 33 dni 123 telefono 4242
-        boolean resultado=d.agregarCliente("4242",new Cliente(123,"martin","lucero","la punta","mod 11 mz 33") );
-       if(resultado){
-       
-           JOptionPane.showMessageDialog(null,"Dato registrado");
-       }else{
-       
-           JOptionPane.showMessageDialog(null,"Dato No registrado");
-           
-       }
-       boolean resultado2=d.agregarCliente("4242",new Cliente(333,"pepe","lucero","la punta","mod 11 mz 33") );
-       if(resultado2){
-       
-           JOptionPane.showMessageDialog(null,"Dato registrado");
-       }else{
-       
-           JOptionPane.showMessageDialog(null,"Dato No registrado");
-           
-       }
-        
-        
+        boolean resultado1 = d.agregarCliente("4241", new Cliente(121, "martin", "lucero", "la punta", "mod 11 mz 33"));
+        boolean resultado2 = d.agregarCliente("4242", new Cliente(122, "martin", "lucero", "san luis", "junin y belgrano"));
+        boolean resultado3 = d.agregarCliente("4243", new Cliente(123, "martin", "lucero", "la punta", "mod 11 mz 33"));
+        boolean resultado4 = d.agregarCliente("4244", new Cliente(124, "martin", "lucero", "san luis", "junin y belgrano"));
+        boolean resultado5 = d.agregarCliente("4245", new Cliente(125, "pepe", "tresmarias", "la punta", "mod 11 mz 33"));
+
     }
-    
+
+}
+
 }
