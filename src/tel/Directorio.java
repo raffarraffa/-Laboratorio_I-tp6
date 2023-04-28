@@ -5,14 +5,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 // buscarTeléfono() que en base a un apellido nos devuelve una lista con los nros de
 //teléfono asociados a dicho apellido.
 public class Directorio {
 
-    private HashMap<String, Cliente> registro = new HashMap<String, Cliente>();
+    private static HashMap<String, Cliente> registro = new HashMap<String, Cliente>();
 
-    public Cliente buscarCliente(String numTelefono) {
+    public static Cliente buscarCliente(String numTelefono) {
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
             String key = entry.getKey();
             Cliente value = entry.getValue();
@@ -20,11 +21,11 @@ public class Directorio {
                 return value;
             }
         }
-        System.out.println("No se encontrò el telefono asociado a un cliente");
+        
         return null;
     }
 
-    public ArrayList<Cliente> buscarClientes(String ciudad) {
+    public static ArrayList<Cliente> buscarClientes(String ciudad) {
 
         ArrayList<Cliente> buscar = new ArrayList();
         Set<String> claves = registro.keySet();
@@ -42,7 +43,7 @@ public class Directorio {
 
 //AgregarCliente() que permite registrar un nuevo cliente con su respectivo nro de
 //teléfono. Siendo el nro del teléfono la clave del mismo.
-    public boolean agregarCliente(String telefono, Cliente c) {
+    public static boolean agregarCliente(String telefono, Cliente c) {
         boolean agregado = false;
         if (!registro.containsKey(telefono)) {
             registro.put(telefono, c);
@@ -51,7 +52,7 @@ public class Directorio {
         return agregado;
     }
 
-    public ArrayList<String> buscarTelefono(String apellido) {
+    public static ArrayList<String> buscarTelefono(String apellido) {
 
         ArrayList<String> num = new ArrayList<String>();
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
@@ -63,11 +64,10 @@ public class Directorio {
         return num;
     }
 
-    public boolean borrarCliente(String telefono) {
-        System.out.println("registro" + registro.toString());
+    public static boolean borrarCliente(String telefono) {
+       
         Cliente aux = registro.remove(telefono);
-        System.out.println("registro" + registro.toString());
-        System.out.println("linea68" + aux.toString());
+       
         if (aux != null) {
             return true;
         }
